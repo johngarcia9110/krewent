@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { firebaseApp } from '../firebase';
 
 class SignUp extends Component {
@@ -43,6 +44,7 @@ class SignUp extends Component {
                     >Sign Up</button>
                 </div>
                 <div>{this.state.error.message}</div>
+                <div>Already have an account? <Link to={'/signin'}>Sign In >></Link></div>
             </div>
         )
     }
