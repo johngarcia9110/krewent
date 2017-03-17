@@ -16,12 +16,12 @@ const store = createStore(reducer);
 firebaseApp.auth().onAuthStateChanged( user => {
     if(user){
         const { email } = user;
-        console.log('user has signedin or signed up', user);
+        
         store.dispatch(logUser(email));
         // If User is logged in redirect them to the app
         browserHistory.push('/app');
     }else{
-        console.log('user still needs to signin or up');
+        
         browserHistory.replace('/signIn');
     }
 })
